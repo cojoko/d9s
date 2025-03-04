@@ -1,0 +1,27 @@
+query RunsQuery(
+  $pipelineName: String!
+  $cursor: String!
+  $runIds: [String!]!
+  $limit: Int!
+) {
+  runsOrError(
+    filter: { 
+      pipelineName: $pipelineName
+      runIds: $runIds
+      }
+    cursor: $cursor
+    limit: $limit
+  ) {
+    __typename
+    ... on Runs {
+      results {
+        runId
+        jobName
+        status
+        runConfigYaml
+        startTime
+        endTime
+      }
+    }
+  }
+}

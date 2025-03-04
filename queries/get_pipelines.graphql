@@ -1,0 +1,23 @@
+query PipelinesQuery {
+  repositoriesOrError {
+    __typename
+    ... on RepositoryConnection {
+      nodes {
+        pipelines {
+          isAssetJob
+          isJob
+          name
+          repository {
+            origin {
+              repositoryLocationName
+            }
+          }
+          runs(limit: 1) {
+            status
+          }
+        }
+        name
+      }
+    }
+  }
+}
