@@ -1,0 +1,20 @@
+query RunQuery($runId: ID!) {
+  runOrError(runId: $runId) {
+    __typename
+    ... on Run {
+      runId
+      jobName
+      status
+      runConfigYaml
+      startTime
+      endTime
+    }
+    ... on RunNotFoundError {
+      message
+    }
+    ... on PythonError {
+      message
+      stack
+    }
+  }
+}

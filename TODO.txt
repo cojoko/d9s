@@ -1,0 +1,20 @@
+cap debug log size
+theming
+graph views
+log view from runs
+
+done: 
+recolor
+copy/paste in command bar
+copy run config to clipboard
+arrow/vim key nav
+start time reformat (runs)
+run drill in (run config)
+break out ui rendering from a single file
+scroll pos is maintined between screens
+add :q to exit
+move command handling to respective files
+move keypress handling to respective files
+bug: runs then contexts then esc is broken
+contexts
+job view
